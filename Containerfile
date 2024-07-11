@@ -9,7 +9,8 @@ COPY --chown=1001:1001 package.json package-lock.json ./
 
 
 # Install all Angular dependacies
-RUN npm ci
+# Changed ci to install
+RUN npm install
 
 # Add application files in container 
 COPY . .
