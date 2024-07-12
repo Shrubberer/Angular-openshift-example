@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+  labels:
+    app: angular-hello
+  name: angular-hello
+  namespace: ms-pipelines
+spec:
+  host: angular-hello-ms-pipelines.apps.unilong.azureuni.tses.gr
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: angular-hello
+    weight: 100
+  wildcardPolicy: None
