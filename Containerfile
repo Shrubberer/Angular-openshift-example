@@ -19,11 +19,17 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+################
+FROM rhel9/nginx-124
+COPY --from=dist/hello-world-app $HOME
+
+
 # Set permision of .angular file in container
 # VOLUME ["/project/.angular"]
 
 # Open port to allow traffic in container
-EXPOSE 8080
+#EXPOSE 8080
+EXPOSE 80
 
 # Run start script using npm command
 # CMD ["npm", "start"]
