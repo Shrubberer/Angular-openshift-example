@@ -6,7 +6,8 @@ WORKDIR /project
 
 # Copy package files in container current direcctory
 #we could also do COPY . . 
-COPY --chown=1001:1001 package.json package-lock.json ./
+# COPY --chown=1001:1001 package.json package-lock.json ./
+COPY . .
 
 # needed for npm run build
 ENV NG_CLI_ANALYTICS=false
@@ -16,7 +17,7 @@ ENV NG_CLI_ANALYTICS=false
 RUN npm install
 
 # Add application files in container 
-COPY . .
+# COPY . .
 ## escape -- for ng build 
 RUN npm run build -- --output-path=dist/output
 
