@@ -7,10 +7,12 @@ WORKDIR /project
 # Copy package files in container currunt direcctory
 COPY --chown=1001:1001 package.json package-lock.json ./
 
+SET NG_CLI_ANALYTICS=false
 
 # Install all Angular dependacies
 # Changed ci to install
 RUN npm install
+RUN npm run build
 
 # Add application files in container 
 COPY . .
