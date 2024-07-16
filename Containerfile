@@ -28,8 +28,9 @@ COPY --from=builder project/dist/hello-world-app $HOME
 # VOLUME ["/project/.angular"]
 
 # Open port to allow traffic in container
-#EXPOSE 8080
-EXPOSE 80
+EXPOSE 8080
+
+CMD nginx -g "daemon off;"
 
 # Run start script using npm command
 # CMD ["npm", "start"]
