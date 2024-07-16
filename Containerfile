@@ -17,7 +17,7 @@ RUN npm install
 
 # Add application files in container 
 COPY . .
-RUN npm run build --output-path=dist/output
+RUN npm run build -- --output-path=dist/output
 
 ################
 FROM rhel9/nginx-124
