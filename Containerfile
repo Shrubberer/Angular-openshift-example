@@ -4,7 +4,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
 # Set the working directory to /project
 WORKDIR /project
 
-# Copy package files in container currunt direcctory
+# Copy package files in container current direcctory
 #we could also do COPY . . 
 COPY --chown=1001:1001 package.json package-lock.json ./
 
