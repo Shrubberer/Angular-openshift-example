@@ -1,5 +1,5 @@
 # Import the base image as UBI-Nodejs 18 image
-FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533
+FROM registry.access.redhat.com/ubi8/nodejs-18:1-71.1695741533 AS builder
 
 # Set the working directory to /project
 WORKDIR /project
@@ -21,7 +21,7 @@ RUN npm run build
 
 ################
 FROM rhel9/nginx-124
-COPY --from=dist/hello-world-app $HOME
+COPY --from=builder dist/hello-world-app $HOME
 
 
 # Set permision of .angular file in container
