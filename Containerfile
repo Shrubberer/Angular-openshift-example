@@ -17,11 +17,11 @@ RUN npm install
 
 # Add application files in container 
 COPY . .
-RUN npm run build
+RUN npm run build --output-path=dist/output
 
 ################
 FROM rhel9/nginx-124
-COPY --from=builder project/dist/hello-world-app $HOME
+COPY --from=builder project/dist/output $HOME
 
 
 # Set permision of .angular file in container
