@@ -17,6 +17,7 @@ RUN npm install
 
 # Add application files in container 
 COPY . .
+## escape -- for ng build 
 RUN npm run build -- --output-path=dist/output
 
 ################
