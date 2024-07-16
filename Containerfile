@@ -12,10 +12,10 @@ ENV NG_CLI_ANALYTICS=false
 # Install all Angular dependacies
 # Changed ci to install
 RUN npm install
-RUN npm run build
 
 # Add application files in container 
 COPY . .
+RUN npm run build
 
 # Set permision of .angular file in container
 VOLUME ["/project/.angular"]
