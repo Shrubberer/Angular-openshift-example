@@ -21,7 +21,7 @@ RUN npm run build
 
 ################
 FROM rhel9/nginx-124
-COPY --from=builder dist/hello-world-app $HOME
+COPY --from=builder project/dist/hello-world-app $HOME
 
 
 # Set permision of .angular file in container
