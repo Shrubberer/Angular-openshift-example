@@ -26,4 +26,4 @@ VOLUME ["/project/.angular"]
 EXPOSE 8080
 
 # Run start script using npm command
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
